@@ -1,0 +1,6 @@
+@GestaoFinanceira_HostAddress = http://localhost:5191
+
+GET {{GestaoFinanceira_HostAddress}}/teste/
+Accept: application/json
+
+###
