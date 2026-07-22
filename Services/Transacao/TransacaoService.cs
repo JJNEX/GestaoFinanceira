@@ -1,7 +1,6 @@
 using GestaoFinanceira.Api.Data;
 using GestaoFinanceira.Api.DTOs.Transacao;
 using GestaoFinanceira.Api.Models;
-using GestaoFinanceira.Api.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace GestaoFinanceira.Api.Services;
@@ -35,7 +34,9 @@ public class TransacaoService : ITransacaoService
         Pessoa? pessoa = await _context.Pessoas.FindAsync(request.PessoaId);
 
         if (pessoa is null)
+        {
             throw new ArgumentException("Pessoa não encontrada.");
+        }
 
         if (pessoa.Idade < 18 && request.Tipo == TipoTransacao.Receita)
         {

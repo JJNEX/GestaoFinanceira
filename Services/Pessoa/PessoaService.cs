@@ -1,7 +1,6 @@
 using GestaoFinanceira.Api.Data;
 using GestaoFinanceira.Api.DTOs.Pessoa;
 using GestaoFinanceira.Api.Models;
-using GestaoFinanceira.Api.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace GestaoFinanceira.Api.Services;

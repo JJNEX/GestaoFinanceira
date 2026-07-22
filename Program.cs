@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using GestaoFinanceira.Api.Data;
 using GestaoFinanceira.Api.Services;
-using GestaoFinanceira.Api.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddScoped<IPessoaService, PessoaService>();
 builder.Services.AddScoped<ITransacaoService, TransacaoService>();
+builder.Services.AddScoped<ITotalService, TotalService>();
 
 // Configura o Entity Framework com PostgreSQL
 builder.Services.AddDbContext<AppDbContext>(options =>

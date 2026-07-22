@@ -1,5 +1,5 @@
 using GestaoFinanceira.Api.DTOs.Pessoa;
-using GestaoFinanceira.Api.Services.Interfaces;
+using GestaoFinanceira.Api.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GestaoFinanceira.Api.Controllers;
@@ -48,7 +48,10 @@ public class PessoaController : ControllerBase
         var excluida = await _pessoaService.ExcluirAsync(id);
 
         if (!excluida)
-            return NotFound();
+            return NotFound(new
+            {
+                mensagem = "Pessoa não encontrada."
+            });
 
         return NoContent();
     }

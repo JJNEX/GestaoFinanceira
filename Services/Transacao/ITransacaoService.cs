@@ -1,6 +1,6 @@
 using GestaoFinanceira.Api.DTOs.Transacao;
 
-namespace GestaoFinanceira.Api.Services.Interfaces;
+namespace GestaoFinanceira.Api.Services;
 
 public interface ITransacaoService
 {

@@ -1,5 +1,5 @@
 using GestaoFinanceira.Api.DTOs.Transacao;
-using GestaoFinanceira.Api.Services.Interfaces;
+using GestaoFinanceira.Api.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GestaoFinanceira.Api.Controllers;
