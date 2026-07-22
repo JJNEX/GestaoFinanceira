@@ -29,7 +29,7 @@ public class PessoaService : IPessoaService
 
     public async Task<PessoaResponse> CriarAsync(PessoaRequest request)
     {
-        var pessoa = new Pessoa
+        Pessoa pessoa = new()
         {
             Id = Guid.NewGuid(),
             Nome = request.Nome,
@@ -44,18 +44,18 @@ public class PessoaService : IPessoaService
     }
 
     public async Task<PessoaResponse?> BuscarPorIdAsync(Guid id)
-{
-    var pessoa = await _context.Pessoas.FindAsync(id);
+    {
+        Pessoa? pessoa = await _context.Pessoas.FindAsync(id);
 
-    if (pessoa is null)
-        return null;
+        if (pessoa is null)
+            return null;
 
-    return ToResponse(pessoa);
-}
+        return ToResponse(pessoa);
+    }
 
     public async Task<bool> ExcluirAsync(Guid id)
     {
-        var pessoa = await _context.Pessoas.FindAsync(id);
+        Pessoa? pessoa = await _context.Pessoas.FindAsync(id);
 
         if (pessoa is null)
             return false;

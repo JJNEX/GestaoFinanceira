@@ -24,15 +24,15 @@ public class PessoaController : ControllerBase
     }
 
     [HttpGet("{id:guid}")]
-public async Task<ActionResult<PessoaResponse>> BuscarPorId(Guid id)
-{
-    var pessoa = await _pessoaService.BuscarPorIdAsync(id);
+    public async Task<ActionResult<PessoaResponse>> BuscarPorId(Guid id)
+    {
+        var pessoa = await _pessoaService.BuscarPorIdAsync(id);
 
-    if (pessoa is null)
-        return NotFound();
+        if (pessoa is null)
+            return NotFound();
 
-    return Ok(pessoa);
-}
+        return Ok(pessoa);
+    }
 
     [HttpPost]
     public async Task<ActionResult<PessoaResponse>> Criar(PessoaRequest request)
